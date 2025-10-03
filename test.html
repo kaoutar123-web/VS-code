@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lana Del Rey — Fan site</title>
+    <meta name="description" content="Hommage à Lana Del Rey : discographie, galerie, vidéos et dates de tournée." />
+    <style>
+        /* ---------- Reset et base ---------- */
+        :root {
+            --bg: #0b0b0f;
+            --card: #0f1720;
+            --muted: #9aa4b2;
+            --accent: #f8f3ef;
+            --glass: rgba(255, 255, 255, 0.04);
+            --radius: 14px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            background: linear-gradient(180deg, #030313 0%, #071021 60%, #0b0710 100%);
+            color: var(--accent);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            padding: 24px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px
+        }
+
+        /* ---------- Layout ---------- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 28px
+        }
+
+        .brand {
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.4px
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 10px;
+            border-radius: 10px;
+            opacity: 0.85
+        }
+
+        nav a:hover {
+            background: var(--glass);
+            opacity: 1
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 26px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+        }
+
+        .hero-inner {
+            display: flex;
+            gap: 20px;
+            align-items: center
+        }
+
+        .hero-text h1 {
+            font-family: "Georgia", serif;
+            font-size: 2.2rem;
+            margin-bottom: 10px
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            max-width: 62ch
+        }
+
+        .cta {
+            margin-top: 12px;
+            display: flex;
+            gap: 10px
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #091018;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--accent)
+        }
+
+        .hero-media {
+            width: 220px;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 12px;
+            flex-shrink: 0
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        /* ---------- Sections ---------- */
+        section {
+            margin-top: 26px
+        }
+
+        .grid {
+            display: grid;
+            gap: 18px
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(1, 1fr)
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 6px 20px rgba(2, 6, 23, 0.5);
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 0.95rem
+        }
+
+        /* Albums */
+        .albums {
+            display: grid;
+            gap: 14px
+        }
+
+        .album {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .album .cover {
+            width: 84px;
+            height: 84px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #091018;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted)
+        }
+
+        .album h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px
+        }
+
+        .album p {
+            color: var(--muted);
+            font-size: 0.92rem
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px
+        }
+
+        .gallery .big {
+            grid-column: 1 / -1;
+            height: 320px
+        }
+
+        .gallery .small {
+            height: 150px
+        }
+
+        /* Tour */
+        .tour-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .tour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02)
+        }
+
+        /* Contact */
+        form {
+            display: grid;
+            gap: 10px
+        }
+
+        input,
+        textarea {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--accent);
+            outline: none
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.35)
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        footer {
+            margin-top: 34px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            color: var(--muted);
+            font-size: 0.92rem
+        }
+
+        /* ---------- Responsive ---------- */
+        @media(min-width:720px) {
+            .hero {
+                grid-template-columns: 1fr auto
+            }
+
+            .grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .gallery {
+                grid-template-columns: repeat(4, 1fr)
+            }
+
+            .gallery .big {
+                grid-column: 1 / 3
+            }
+
+            .gallery .small {
+                height: 180px
+            }
+        }
+
+        @media(min-width:1000px) {
+            .hero-text h1 {
+                font-size: 2.8rem
+            }
+
+            .hero-media {
+                width: 320px;
+                height: 320px
+            }
+
+            .gallery .big {
+                grid-column: 1 / 4;
+                height: 420px
+            }
+
+            .gallery .small {
+                height: 220px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" role="document">
+        <header>
+            <div class="brand">Lana Del Rey — Histoire & musique</div>
+            <nav aria-label="Navigation principale">
+                <a href="#about">À propos</a>
+                <a href="#albums">Albums</a>
+                <a href="#gallery">Galerie</a>
+                <a href="#tour">Tournée</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <h1 id="hero-title">Melancholy, glamour & Californian dreams</h1>
+                        <p>
+                            Bienvenue — site hommage non officiel dédié à <strong>Lana Del Rey</strong>. Découvre ses
+                            albums marquants,
+                            une petite galerie d'images, les vidéos et des exemples de dates de tournée.
+                        </p>
+                        <div class="cta" role="group" aria-label="Actions principales">
+                            <a class="btn" href="#albums">Voir la discographie</a>
+                            <a class="btn ghost" href="#tour">Dates & billets</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-media" aria-hidden="true">
+                        <!-- Remplace l'image par une photo officielle si tu veux -->
+                        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1000&q=80&auto=format&fit=crop"
+                            alt="Portrait stylisé (illustration)" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- A PROPOS -->
+            <section id="about" aria-labelledby="about-title">
+                <h2 id="about-title" style="margin-bottom:12px;font-family:Georgia,serif">À propos</h2>
+                <div class="card">
+                    <p class="muted">
+                        Ce site est un fan site non officiel consacré à Lana Del Rey — auteure-compositrice-interprète
+                        reconnue pour son univers mélancolique et cinématographique. Il présente une sélection d'albums,
+                        une galerie d'images et une section contact pour échanger entre fans.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ALBUMS -->
+            <section id="albums" aria-labelledby="albums-title">
+                <h2 id="albums-title" style="margin-bottom:12px;font-family:Georgia,serif">Discographie sélectionnée
+                </h2>
+                <div class="albums">
+                    <!-- Tu peux ajouter / modifier ces éléments -->
+                    <article class="album card" aria-label="Album Born to Die">
+                        <div class="cover" aria-hidden="true">Cover</div>
+                        <div>
+                            <h4>Born to Die <span class="muted" style="font-weight:600">— 2012</span></h4>
+                            <p class="muted">Breakthrough majeur — singles : Video Games, Blue Jeans.</p>
+                        </div>
+                    </article>
+
+                    <article class="album card" aria-label="Album Ultraviolence">
+                        <div class="cover" aria-hidden="true">Cover</div>
+                        <div>
+                            <h4>Ultraviolence <span class="muted" style="font-weight:600">— 2014</span></h4>
+                            <p class="muted">Ambiance rock / soul, production par Dan Auerbach.</p>
+                        </div>
+                    </article>
+
+                    <article class="album card" aria-label="Album Norman F***ing Rockwell">
+                        <div class="cover" aria-hidden="true">Cover</div>
+                        <div>
+                            <h4>Norman F***ing Rockwell! <span class="muted" style="font-weight:600">— 2019</span></h4>
+                            <p class="muted">Œuvre saluée par la critique — songwriting mature et intime.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- GALERIE -->
+            <section id="gallery" aria-labelledby="gallery-title">
+                <h2 id="gallery-title" style="margin-bottom:12px;font-family:Georgia,serif">Galerie</h2>
+                <div class="gallery" role="list">
+                    <div class="big card" role="listitem">
+                        <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=1600&q=80&auto=format&fit=crop"
+                            alt="Photo stylisée 1" />
+                    </div>
+                    <div class="small card" role="listitem">
+                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=1000&q=80&auto=format&fit=crop"
+                            alt="Photo stylisée 2" />
+                    </div>
+                    <div class="small card" role="listitem">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1000&q=80&auto=format&fit=crop"
+                            alt="Photo stylisée 3" />
+                    </div>
+                    <div class="small card" role="listitem">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80&auto=format&fit=crop"
+                            alt="Photo stylisée 4" />
+                    </div>
+                </div>
+                <p class="muted" style="margin-top:10px">Remplace ces images par du contenu sous licence si tu veux
+                    publier le site.</p>
+            </section>
+
+            <!-- TOUR -->
+            <section id="tour" aria-labelledby="tour-title">
+                <h2 id="tour-title" style="margin-bottom:12px;font-family:Georgia,serif">Dates de tournée (exemple)</h2>
+                <div class="tour-list">
+                    <div class="tour-item card" aria-label="Tournée Paris">
+                        <div>
+                            <strong>Paris — Le Trianon</strong>
+                            <div class="muted">12 mai 2026</div>
+                        </div>
+                        <div><a class="btn" href="#" aria-label="Acheter billets Paris">Billets</a></div>
+                    </div>
+
+                    <div class="tour-item card" aria-label="Tournée Londres">
+                        <div>
+                            <strong>Londres — O2 Academy</strong>
+                            <div class="muted">02 juin 2026</div>
+                        </div>
+                        <div><a class="btn" href="#" aria-label="Acheter billets Londres">Billets</a></div>
+                    </div>
+                </div>
+                <p class="muted" style="margin-top:10px">Ces dates sont des exemples — vérifie les annonces officielles
+                    pour les tournées réelles.</p>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title" style="margin-bottom:12px;font-family:Georgia,serif">Contact & suggestions</h2>
+                <div class="card">
+                    <form
+                        onsubmit="event.preventDefault(); alert('Merci — message simulé (formulaire non connecté).');">
+                        <label for="name" class="muted">Nom</label>
+                        <input id="name" name="name" type="text" placeholder="Ton nom" required>
+
+                        <label for="email" class="muted">Email</label>
+                        <input id="email" name="email" type="email" placeholder="ton@email.com" required>
+
+                        <label for="message" class="muted">Message</label>
+                        <textarea id="message" name="message" placeholder="Ton message aux fans..." required></textarea>
+
+                        <div style="margin-top:8px;display:flex;gap:8px">
+                            <button class="btn" type="submit">Envoyer</button>
+                            <button class="btn ghost" type="reset">Effacer</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                <div>Site non officiel — Fan page</div>
+                <div class="muted">© <span id="year"></span> · Respecte le droit d'auteur</div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Petit script d'UX
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Focus visible pour l'accessibilité
+        (function () {
+            const style = document.createElement('style');
+            style.textContent = 'a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(255,255,255,0.12);outline-offset:3px}';
+            document.head.appendChild(style);
+        })();
+    </script>
+</body>
+
+</html>
