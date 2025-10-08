@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lana Del Rey — Univers coquette</title>
+    <meta name="description" content="Un site hommage à Lana Del Rey — esthétique vintage, douceur et mélancolie." />
+    <style>
+        :root {
+            --beige: #f4e9de;
+            --rose: #f3d8d1;
+            --blanc: #fffaf7;
+            --texte: #463b35;
+            --accent: #e2b8a2;
+            --ombre: rgba(0, 0, 0, 0.08);
+            font-family: "Playfair Display", "Georgia", serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(180deg, var(--blanc) 0%, var(--beige) 100%);
+            color: var(--texte);
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .brand {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--texte);
+        }
+
+        nav a {
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: var(--rose);
+            margin: 0 6px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px var(--ombre);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: center;
+            background: var(--blanc);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 25px var(--ombre);
+            margin-bottom: 30px;
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #6b5b55;
+            margin-bottom: 14px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--blanc);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 8px 20px var(--ombre);
+            margin-bottom: 16px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            height: 240px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px var(--ombre);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+        .audio-player {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #7b6c67;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 720px) {
+            .hero {
+                grid-template-columns: 1.1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">Lana Del Rey — L'univers coquette</div>
+        <nav>
+            <a href="#about">À propos</a>
+            <a href="#albums">Albums</a>
+            <a href="#gallery">Galerie</a>
+            <a href="#musique">Musique</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <h1>Lana Del Rey : élégance, nostalgie et mélancolie</h1>
+            <p>
+                L’esthétique de Lana Del Rey mêle romantisme, vintage américain, douceur pastel et glamour rétro.
+                Ce site est une ode à sa poésie musicale et visuelle.
+            </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1000&auto=format&fit=crop"
+            alt="Photo stylisée vintage féminine, dans l'esprit de Lana Del Rey" />
+    </section>
+
+    <!-- À propos -->
+    <section id="about">
+        <div class="card">
+            <h2>À propos</h2>
+            <p>
+                Lana Del Rey, de son vrai nom Elizabeth Woolridge Grant, incarne un univers unique : celui des amours
+                perdues,
+                du rêve américain brisé, et d’une féminité douce et assumée.
+                Son esthétique mêle l’élégance hollywoodienne des années 60 à la poésie moderne.
+            </p>
+        </div>
+    </section>
+
+    <!-- Albums -->
+    <section id="albums">
+        <div class="card">
+            <h2>Albums emblématiques</h2>
+            <ul>
+                <li><strong>Born to Die</strong> (2012) — "Video Games", "Summertime Sadness"</li>
+                <li><strong>Ultraviolence</strong> (2014) — "West Coast", "Shades of Cool"</li>
+                <li><strong>Norman F***ing Rockwell!</strong> (2019)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="gallery">
+        <h2>Galerie visuelle</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop"
+                alt="Femme vintage en robe fleurie, esthétique rétro">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1000&auto=format&fit=crop"
+                alt="Portrait féminin pastel, lumière douce">
+            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1000&auto=format&fit=crop"
+                alt="Ambiance romantique rose poudré">
+            <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?q=80&w=1000&auto=format&fit=crop"
+                alt="Vintage mood, cheveux dans le vent">
+        </div>
+    </section>
+
+    <!-- Musique -->
+    <section id="musique">
+        <div class="card">
+            <h2>🎵 Écouter un extrait : "Salvatore"</h2>
+            <p>
+                "All the lights in the boulevard fade into the dark..."
+                Cette chanson incarne l'élégance italienne, la nostalgie et la langueur caractéristiques de Lana Del
+                Rey.
+            </p>
+            <div class="audio-player">
+                <audio controls>
+                    <!-- Tu peux remplacer ce lien par un extrait légal depuis un service libre ou personnel -->
+                    <source src="https://upload.wikimedia.org/wikipedia/en/5/57/Lana_Del_Rey_-_Salvatore_sample.ogg"
+                        type="audio/ogg">
+                    Ton navigateur ne supporte pas l’audio HTML5.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © <span id="year"></span> — Site hommage non officiel à Lana Del Rey
+        <br>Design inspiré de son univers visuel pastel et vintage 🌸
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
